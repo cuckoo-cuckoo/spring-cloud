@@ -1,0 +1,19 @@
+#该模块实现自己写一个负载均衡算法
+
+server:
+  port: 801
+
+spring:
+  application:
+    name: cloud-consumer-801
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      #      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: consumer-801
+    prefer-ip-address: true   #健康监控显示ip

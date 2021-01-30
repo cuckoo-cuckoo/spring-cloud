@@ -1,0 +1,27 @@
+#使用openfeign客户端,设置了ribbon 的超时,openfeign的日志打印功能
+
+server:
+  port: 80
+spring:
+  application:
+    name: feign-order
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+#超时控制
+ribbon:
+  ReadTimeout:  15000
+  ConnectTimeout: 15000
+
+#openfeign日志配置
+
+#logging:
+#  level:
+#    com.cloud.client.PaymentFeignClient: debug
+logging:
+  level:
+    com.cloud.client.PaymentFeignClient: debug

@@ -1,0 +1,12 @@
+server:
+  port: 8006
+spring:
+  application:
+    name: consul-provider-payment
+    #注册中心的配置   consul中服务是临时节点，服务出问题后，立马移除
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
