@@ -1,0 +1,33 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config-center
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/cuckoo-cuckoo/spring-cloud-config.git  #远程git仓库的地址
+          search-paths:
+            - spring-cloud-config    #远程仓库的名字
+      label: main   #远程仓库的分支名
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+
+      #使用bus消息总线与config配合实现自动刷新配置  目前支持rabbitmq, kafka
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "bus-refresh"
+

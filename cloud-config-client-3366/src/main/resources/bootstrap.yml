@@ -1,0 +1,27 @@
+server:
+  port: 3366
+
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      label: main   #配置文件的分支名
+      name: config    #配置文件名
+      profile: dev     #配置文件环境
+      uri: http://localhost:3344   #config sever中心的地址   目的是通过配置中心获取配置文件信息
+  rabbitmq:
+    username: guest
+    password: guest
+    host: 127.0.0.1
+    port: 5672
+#暴露监控端口
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka

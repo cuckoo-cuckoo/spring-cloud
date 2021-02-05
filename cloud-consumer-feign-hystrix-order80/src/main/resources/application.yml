@@ -1,0 +1,29 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-provider-hystrix-order
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+
+#超时控制
+ribbon:
+  ReadTimeout: 3000
+  ConnectTimeout: 3000
+
+logging:
+  level:
+    com.cloud.client: debug
+
+
+    #演示客户端的服务降级 ，熔断
+feign:
+  hystrix:
+    enabled: true   #If true, an OpenFeign client will be wrapped with a Hystrix circuit breaker
+    #如果为true，openfeign客户端使用熔断器进行包装
