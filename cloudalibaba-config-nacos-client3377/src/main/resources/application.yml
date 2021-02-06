@@ -1,6 +1,29 @@
+#测试在默认分组下读取配置信息
+#spring:
+#  profiles:
+#    active: dev
+#  main:
+#    allow-bean-definition-overriding: true
+
+
+#测试在默认分组下读取配置信息
+#  spring:
+#    profiles:
+#      active: test
+#    main:
+#      allow-bean-definition-overriding: true
+
+
+#测试自定义不同分组读取配置文件信息
+#spring:
+#  profiles:
+#    active: info
+#  main:
+#    allow-bean-definition-overriding: true
+
+#测试不同命名空间下的配置文件的读取
 spring:
   profiles:
-    active: dev
-
+    active: test
   main:
     allow-bean-definition-overriding: true
