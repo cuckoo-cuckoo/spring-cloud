@@ -1,0 +1,2 @@
+    //启动出错：The bean 'nacosRefreshProperties', defined in class path resource [com/alibaba/cloud/nacos/NacosConfigAutoConfiguration.class], could not be registered. A bean with that name has already been defined in URL [jar:file:/D:/Program%20Files/apache/maven-repository/com/alibaba/cloud/spring-cloud-alibaba-nacos-config/2.1.0.RELEASE/spring-cloud-alibaba-nacos-config-2.1.0.RELEASE.jar!/com/alibaba/cloud/nacos/refresh/NacosRefreshProperties.class] and overriding is disabled.
+解决方法：  spring.main. allow-bean-definition-overriding=true   //允许bean的重复定义
