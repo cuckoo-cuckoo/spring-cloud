@@ -1,8 +1,8 @@
-package com.controller;
+package com.cloud.controller;
 
-import com.Handel.CustomerBlockHandler;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
+import com.cloud.Handel.CustomerBlockHandler;
 import com.cloud.pojo.CommonResult;
 import com.cloud.pojo.Payment;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RateLimitController {
     @GetMapping("/byResource")
-    @SentinelResource(value = "byResource", blockHandler = "handleException")
+    @SentinelResource(value = "byResource", blockHandler = "handleException")//不用value是资源名默认是方法上的路径
     public CommonResult byResource() {
         return new CommonResult(200, "按资源名称限流测试OK", new Payment(2020L, "serial001"));
     }

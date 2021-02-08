@@ -1,4 +1,4 @@
-package com;
+package cloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,14 +6,13 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @author Administrator
- * @create 2021-02-07 0:33
+ * @create 2021-02-09 0:09
  */
-//@EnableDiscoveryClient
 @SpringBootApplication
-public class MainApp8401
-{
+@EnableDiscoveryClient
+public class NacosProviderApllication9004 {
+
     public static void main(String[] args) {
-        SpringApplication.run(MainApp8401.class, args);
+        SpringApplication.run(NacosProviderApllication9004.class,args);
     }
 }
-
