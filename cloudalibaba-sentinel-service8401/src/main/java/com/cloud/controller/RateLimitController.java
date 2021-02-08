@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RateLimitController {
     @GetMapping("/byResource")
-    @SentinelResource(value = "byResource", blockHandler = "handleException")//不用value是资源名默认是方法上的路径
+    @SentinelResource(value = "byResource", blockHandler = "handleException")
     public CommonResult byResource() {
         return new CommonResult(200, "按资源名称限流测试OK", new Payment(2020L, "serial001"));
     }
