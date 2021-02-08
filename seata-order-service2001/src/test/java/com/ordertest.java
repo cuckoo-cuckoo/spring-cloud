@@ -1,7 +1,8 @@
 package com;
 
-import com.dao.OrderDao;
-import com.pojo.Order;
+import com.cloud.SeataOrder2001;
+import com.cloud.dao.OrderDao;
+import com.cloud.pojo.Order;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

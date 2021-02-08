@@ -33,7 +33,13 @@ logging:
     io:
       seata: info
 
+
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   #打印sql语句
+
+#超时控制
+ribbon:
+  ReadTimeout:  15000
+  ConnectTimeout: 15000
